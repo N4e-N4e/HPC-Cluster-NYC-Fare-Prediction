@@ -1,0 +1,20 @@
+Linear Regression Lasso
+jovyan@jupyter-ukgff-missouri-edu---edd75096:~/Project_NYC_final/GitLabRepo/Jobs$ kubectl -n gp-engine-mizzou-dsa-cloud logs taxi-fare-lasso-job-dmdf6
+Lasso model trained successfully.
+Training Metrics - MAE: 1.57, RMSE: 3.41, R²: 0.9594
+Model saved to: /work_env/cleandata/lasso_model.joblib
+
+
+Random Forest
+jovyan@jupyter-ukgff-missouri-edu---edd75096:~/Project_NYC_final/GitLabRepo/Jobs$ kubectl -n gp-engine-mizzou-dsa-cloud logs taxi-fare-rf-job-zfkxw
+Random Forest model trained successfully.
+Training Metrics - MAE: 1.33, RMSE: 2.56, R²: 0.9770
+Model saved to: /work_env/cleandata/rf_model.joblib
+
+
+XGB
+jovyan@jupyter-ukgff-missouri-edu---edd75096:~/Project_NYC_final/GitLabRepo/Jobs$ kubectl -n gp-engine-mizzou-dsa-cloud logs  taxi-fare-xgb-job-vjqvm
+XGBoost model trained successfully.
+Training Metrics - MAE: 0.53, RMSE: 1.48, R²: 0.9924
+Model saved to: /work_env/cleandata/xgb_model.joblib
+

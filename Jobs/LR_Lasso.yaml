@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: taxi-fare-lasso-job
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: taxi-fare-lasso
+        image: gitlab-registry.nrp-nautilus.io/n4e-mizzou/ml_image:428120b1
+        command: ["python3", "/work_env/Scripts/lr_lasso.py"]
+        volumeMounts:
+        - name: ukgff-finalproj
+          mountPath: /work_env
+        resources:
+          requests:
+            memory: 16Gi
+            cpu: "4"
+          limits:
+            memory: 16Gi
+            cpu: "4"
+      volumes:
+      - name: ukgff-finalproj
+        persistentVolumeClaim:
+          claimName: ukgff-finalproj
