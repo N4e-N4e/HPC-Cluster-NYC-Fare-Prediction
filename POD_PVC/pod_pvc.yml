@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ukgff-fp
+spec:
+  containers:
+  - name: ukgff-fp
+    image: ubuntu:20.04
+    command: ["sh", "-c", "echo 'Im a new pod' && sleep infinity"]
+    resources:
+      limits:
+        memory: 10Gi
+        cpu: 2
+      requests:
+        memory: 10Gi
+        cpu: 2
+    volumeMounts:
+    - mountPath: /work_env
+      name: ukgff-finalproj
+  volumes:
+    - name: ukgff-finalproj
+      persistentVolumeClaim:
+        claimName: ukgff-finalproj

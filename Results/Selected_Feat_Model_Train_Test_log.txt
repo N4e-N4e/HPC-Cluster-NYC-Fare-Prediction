@@ -1,0 +1,19 @@
+Model - XGB
+
+Features - trip_distance, trip_duration_min, is_airport_trip, has_toll, RatecodeID, DO_Borough and PU_Borough
+
+Training : 
+jovyan@jupyter-ukgff-missouri-edu---edd75096:~/Project_NYC_final/GitLabRepo/Jobs$ kubectl -n gp-engine-mizzou-dsa-cloud logs taxi-fare-eda-xgb-job-mjpbx
+XGBoost model trained successfully.
+Training Metrics - MAE: 0.56, RMSE: 1.55, R²: 0.9916
+Model saved to: /work_env/cleandata/xgb_model_best_features.joblib
+
+Testing:
+jovyan@jupyter-ukgff-missouri-edu---edd75096:~/Project_NYC_final/GitLabRepo/Jobs$ kubectl -n gp-engine-mizzou-dsa-cloud logs taxi-fare-eda-xgb-perf-vdl9s
+XGBoost model (best features) loaded successfully.
+XGBoost Model (Best Features) Performance on Test Data:
+MAE: 0.57
+RMSE: 1.57
+R²: 0.9914
+Scatter plot saved at: /work_env/result/actual_vs_pred_XGB_best_features.png
+
